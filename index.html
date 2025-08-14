@@ -12,32 +12,35 @@
         color: #333;
         margin: 0;
         line-height: 1.6;
-        scroll-behavior: smooth; /* animatie scroll */
+        scroll-behavior: smooth; /* scroll lin */
     }
 
     header {
         background: linear-gradient(135deg, #2a5298,#1e3c72);
         color: white;
         text-align:center;
-        padding: 3rem 1rem 1rem 1rem;
-        position: relative;
+        padding: 1rem;
+        position: fixed; /* header fix */
+        top: 0;
+        width: 100%;
+        z-index: 1000;
     }
 
     header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
     }
 
     header p {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
-    /* MENIU */
+    /* MENIU desktop */
     nav {
         display: flex;
         justify-content: center;
-        gap: 2rem;
-        margin-top: 1rem;
+        gap: 1.5rem;
+        margin-top: 0.5rem;
     }
 
     nav a {
@@ -58,7 +61,7 @@
         cursor: pointer;
         gap: 5px;
         position: absolute;
-        top: 1.5rem;
+        top: 1rem;
         right: 1rem;
     }
 
@@ -104,7 +107,7 @@
     main {
         max-width: 1000px;
         margin: 2rem auto;
-        padding: 0 1rem;
+        padding: 140px 1rem 2rem 1rem; /* spațiu de sus pentru header fix */
     }
 
     section {
