@@ -6,167 +6,127 @@
 <title>Valerica Gligore – Psiholog Clinician</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
-    body {
-        font-family: 'Inter', sans-serif;
-        background-color: #f9f9f9;
-        color: #333;
-        margin: 0;
-        line-height: 1.6;
-        scroll-behavior: smooth; /* scroll lin */
-    }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* scroll lin */
+}
 
-    header {
-        background: linear-gradient(135deg, #2a5298,#1e3c72);
-        color: white;
-        text-align:center;
-        padding: 1rem;
-        position: fixed; /* header fix */
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-    }
+/* Header static */
+header {
+    background: linear-gradient(135deg, #2a5298,#1e3c72);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem; /* dimensiunea headerului */
+}
 
-    header h1 {
-        font-size: 2rem;
-        margin-bottom: 0.3rem;
-    }
+/* Nav fix */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.8rem 1rem;
+    position: fixed; /* fixat sus */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(135deg, #2a5298,#1e3c72);
+}
 
-    header p {
-        font-size: 1rem;
-    }
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
 
-    /* MENIU desktop */
-    nav {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-top: 0.5rem;
-    }
+nav a:hover {
+    text-decoration: underline;
+}
 
-    nav a {
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-        cursor: pointer;
-    }
+/* Hamburger mobil */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+}
 
-    nav a:hover {
-        text-decoration: underline;
-    }
+.hamburger div {
+    width: 22px;
+    height: 3px;
+    background-color: white;
+}
 
-    /* Hamburger pentru mobil */
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 5px;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-    }
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #1e3c72;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 180px;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
 
-    .hamburger div {
-        width: 25px;
-        height: 3px;
-        background-color: white;
-    }
+.mobile-menu a {
+    padding: 0.8rem;
+    border-bottom: 1px solid #2a5298;
+    color: white;
+    text-decoration: none;
+}
 
-    .mobile-menu {
-        display: none;
-        flex-direction: column;
-        background: #1e3c72;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 200px;
-        border-radius: 0 0 12px 12px;
-        overflow: hidden;
-    }
+.mobile-menu a:hover {
+    background: rgba(255,255,255,0.1);
+}
 
-    .mobile-menu a {
-        padding: 1rem;
-        border-bottom: 1px solid #2a5298;
-        color: white;
-        text-decoration: none;
-    }
+/* Responsive mobil */
+@media(max-width:768px){
+    nav a { display: none; } /* ascunde link-urile orizontale */
+    .hamburger { display: flex; }
+    main { padding: 140px 0.8rem 2rem 0.8rem; font-size: 0.9rem; } /* compact */
+}
 
-    .mobile-menu a:hover {
-        background: rgba(255,255,255,0.1);
-    }
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 80px 1rem 2rem 1rem; /* spațiu pentru nav fix */
+}
 
-    /* Responsive */
-    @media(max-width:768px){
-        nav {
-            display: none;
-        }
-        .hamburger {
-            display: flex;
-        }
-    }
+section {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    main {
-        max-width: 1000px;
-        margin: 2rem auto;
-        padding: 140px 1rem 2rem 1rem; /* spațiu de sus pentru header fix */
-    }
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
 
-    section {
-        background-color: #fff;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+h2 {
+    color: #1e3c72;
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.4rem;
+}
 
-    section:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    h2 {
-        color: #1e3c72;
-        margin-bottom: 1rem;
-        border-bottom: 2px solid #eee;
-        padding-bottom: .5rem;
-    }
-
-    ul {
-        padding-left: 1.2rem;
-    }
-
-    a {
-        color: #1e3c72;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    blockquote {
-        font-style: italic;
-        color: #666;
-        margin: 20px 0;
-        border-left: 4px solid #ccc;
-        padding-left: 15px;
-    }
-
-    .article-image {
-        display: block;
-        margin: 2rem auto;
-        width: 80%;
-        max-width: 500px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    footer {
-        text-align: center;
-        background: #eee;
-        padding: 1rem;
-        font-size: 0.9rem;
-    }
+ul { padding-left: 1.2rem; }
+a { color: #1e3c72; text-decoration: none; }
+a:hover { text-decoration: underline; }
+blockquote { font-style: italic; color: #666; margin: 20px 0; border-left: 4px solid #ccc; padding-left: 15px; }
+.article-image { display: block; margin: 1.5rem auto; width: 80%; max-width: 450px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+footer { text-align: center; background: #eee; padding: 1rem; font-size: 0.9rem; }
 </style>
 </head>
 <body>
@@ -175,7 +135,7 @@
     <h1>Valerica Gligore</h1>
     <p>Psiholog Clinician – Psihoterapie pentru copii, adolescenți și adulți</p>
 
-    <!-- Meniu desktop -->
+    <!-- Nav fix -->
     <nav>
         <a href="#despre-mine">Despre mine</a>
         <a href="#servicii">Servicii</a>
@@ -184,23 +144,21 @@
         <a href="#articol">Articol</a>
         <a href="#program">Program</a>
         <a href="#contact">Contact</a>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#despre-mine">Despre mine</a>
+            <a href="#servicii">Servicii</a>
+            <a href="#obiective">Obiective</a>
+            <a href="#povestea-mea">Povestea mea</a>
+            <a href="#articol">Articol</a>
+            <a href="#program">Program</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
-
-    <!-- Hamburger mobil -->
-    <div class="hamburger" id="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#despre-mine">Despre mine</a>
-        <a href="#servicii">Servicii</a>
-        <a href="#obiective">Obiective</a>
-        <a href="#povestea-mea">Povestea mea</a>
-        <a href="#articol">Articol</a>
-        <a href="#program">Program</a>
-        <a href="#contact">Contact</a>
-    </div>
 </header>
 
 <main>
@@ -234,35 +192,23 @@
     <section id="povestea-mea">
         <h2>Povestea mea</h2>
         <p>Ofer un spațiu în care nu trebuie să fii „bine”. Poți veni cu tot ceea ce doare, cu tot ceea ce nu știi încă cum să înțelegi sau să exprimi. Mă angajez într-un proces autentic de însoțire, bazat pe ascultare profundă, prezență și respect pentru ritmul interior al fiecărei persoane.</p>
-        <blockquote>
-            „Oamenii nu se vindecă prin sfaturi, ci prin prezența cuiva care poate rămâne acolo cu ei, în durere.”
-        </blockquote>
+        <blockquote>„Oamenii nu se vindecă prin sfaturi, ci prin prezența cuiva care poate rămâne acolo cu ei, în durere.”</blockquote>
     </section>
 
     <section id="articol">
         <h2>Articol: Dezamăgirea unei note slabe – perspectiva psihanalitică asupra trăirilor adolescentului</h2>
         <img src="https://github.com/Gabi072/valerica-/blob/main/image.png?raw=true" alt="Articol psihologic" class="article-image">
-        <p>În viața psihică a adolescentului, o notă nesatisfăcătoare poate declanșa un vârtej de trăiri emoționale intense, adesea neînțelese de adulții din jur. Din perspectiva psihanalitică, acest moment nu este doar o simplă reacție la un eșec școlar, ci un loc de condensare a conflictelor interne, a luptei dintre dorințele proprii și exigențele supraeu-lui, a temerilor legate de iubire, acceptare și valoare personală.</p>
-        <p>Adolescentul, aflat în plină construcție a identității, trăiește evaluările externe – cum este o notă – ca pe o judecată globală asupra ființei sale. O notă slabă poate reactiva sentimente infantile de neputință, rușine sau abandon. Dacă părinții, în trecut, au legat iubirea de performanță, adolescentul poate resimți o notă mică nu doar ca un eșec academic, ci ca o pierdere a iubirii sau ca o dovadă că nu este „destul de bun”.</p>
-        <p>În spatele furiei, negării sau apatiei care pot apărea la suprafață, se pot ascunde sentimente profunde de dezamăgire față de sine, vinovăție sau chiar fantasme de pedeapsă. În unele cazuri, nota poate deveni un simptom – un mod inconștient de a transmite un conflict nespus, de a provoca o reacție sau de a susține o identificare negativă cu o figură parentală percepută ca eșuată.</p>
-        <p>Din perspectiva psihanalitică, ceea ce contează nu este doar nota în sine, ci semnificația pe care adolescentul i-o atribuie și rețeaua de fantasme, dorințe și temeri pe care o reactivează. O abordare empatică, conținătoare, care nu se grăbește să corecteze sau să explice, ci lasă spațiu pentru exprimarea acestor trăiri, poate deschide calea către o mai bună înțelegere de sine și o relație mai sănătoasă cu performanța și eșecul.</p>
+        <p>În viața psihică a adolescentului, o notă nesatisfăcătoare poate declanșa un vârtej de trăiri emoționale intense, adesea neînțelese de adulții din jur...</p>
     </section>
 
     <section id="program">
         <h2>Program și locație</h2>
-        <p>
-            📍 Aleea Fuiorului Nr 1, București<br>
-            💻 Ședințe și online<br>
-            🕐 Program: Luni – Vineri, 10:00 – 18:00
-        </p>
+        <p>📍 Aleea Fuiorului Nr 1, București<br>💻 Ședințe și online<br>🕐 Program: Luni – Vineri, 10:00 – 18:00</p>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>
-            📞 Telefon / WhatsApp: <a href="tel:0770232937">0770232937</a><br>
-            📧 Email: <a href="mailto:vali_robu@yahoo.com">vali_robu@yahoo.com</a>
-        </p>
+        <p>📞 Telefon / WhatsApp: <a href="tel:0770232937">0770232937</a><br>📧 Email: <a href="mailto:vali_robu@yahoo.com">vali_robu@yahoo.com</a></p>
     </section>
 </main>
 
@@ -271,18 +217,16 @@
 </footer>
 
 <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
 
-    hamburger.addEventListener('click', () => {
-        mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-    });
+hamburger.addEventListener('click', () => {
+    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+});
 
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.style.display = 'none';
-        });
-    });
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => { mobileMenu.style.display = 'none'; });
+});
 </script>
 
 </body>
