@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valerica Gligore – Psiholog Clinician</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        line-height: 1.6;
+        scroll-behavior: smooth; /* animatie scroll */
+    }
+
+    header {
+        background: linear-gradient(135deg, #2a5298,#1e3c72);
+        color: white;
+        text-align:center;
+        padding: 3rem 1rem 1rem 1rem;
+        position: relative;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    /* MENIU */
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    /* Hamburger pentru mobil */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+    }
+
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+        background: #1e3c72;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        border-radius: 0 0 12px 12px;
+        overflow: hidden;
+    }
+
+    .mobile-menu a {
+        padding: 1rem;
+        border-bottom: 1px solid #2a5298;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+        nav {
+            display: none;
+        }
+        .hamburger {
+            display: flex;
+        }
+    }
+
+    main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    section {
+        background-color: #fff;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+        color: #1e3c72;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #eee;
+        padding-bottom: .5rem;
+    }
+
+    ul {
+        padding-left: 1.2rem;
+    }
+
+    a {
+        color: #1e3c72;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    blockquote {
+        font-style: italic;
+        color: #666;
+        margin: 20px 0;
+        border-left: 4px solid #ccc;
+        padding-left: 15px;
+    }
+
+    .article-image {
+        display: block;
+        margin: 2rem auto;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    footer {
+        text-align: center;
+        background: #eee;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Valerica Gligore</h1>
+    <p>Psiholog Clinician – Psihoterapie pentru copii, adolescenți și adulți</p>
+
+    <!-- Meniu desktop -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#despre-mine">Despre mine</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#obiective">Obiective</a>
+        <a href="#povestea-mea">Povestea mea</a>
+        <a href="#program">Program</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Hamburger mobil -->
+    <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">Home</a>
+        <a href="#despre-mine">Despre mine</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#obiective">Obiective</a>
+        <a href="#povestea-mea">Povestea mea</a>
+        <a href="#program">Program</a>
+        <a href="#contact">Contact</a>
+    </div>
+</header>
+
+<main>
+    <section id="home">
+        <h2>Home</h2>
+        <p>Bine ai venit pe site-ul meu!</p>
+    </section>
+
+    <section id="despre-mine">
+        <h2>Despre mine</h2>
+        <p>Sunt psiholog clinician și psihoterapeut...</p>
+    </section>
+
+    <section id="servicii">
+        <h2>Servicii oferite</h2>
+        <ul>
+            <li>Psihoterapie individuală – 50 min – 250 RON</li>
+            <li>Evaloare Psihologica - Min 3 Sedinte</li>
+            <li>Sesiuni online prin apel video</li>
+            <li>Sprijin emoțional pentru copii, adolescenți și vârstnici</li>
+        </ul>
+    </section>
+
+    <section id="obiective">
+        <h2>Obiective urmărite în terapie</h2>
+        <ul>
+            <li>Depresie, anxietate, atacuri de panică</li>
+            <li>Doliu, traume, pierderi emoționale</li>
+            <li>Stima de sine scăzută</li>
+            <li>Blocaje relaționale și personale</li>
+            <li>Abilități de comunicare și exprimare</li>
+            <li>Dezvoltare personală</li>
+        </ul>
+    </section>
+
+    <section id="povestea-mea">
+        <h2>Povestea mea</h2>
+        <p>Ofer un spațiu în care nu trebuie să fii „bine”...</p>
+    </section>
+
+    <section id="program">
+        <h2>Program și locație</h2>
+        <p>📍 Aleea Fuiorului Nr 1, București<br>
+           💻 Ședințe și online<br>
+           🕐 Program: Luni – Vineri, 10:00 – 18:00
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>📞 Telefon / WhatsApp: <a href="tel:0770232937">0770232937</a><br>
+           📧 Email: <a href="mailto:vali_robu@yahoo.com">vali_robu@yahoo.com</a>
+        </p>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 Valerica Gligore – Psiholog Clinician. Toate drepturile rezervate.
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+        mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Inchide meniul mobil la click pe un link
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.style.display = 'none';
+        });
+    });
+</script>
+
+</body>
+</html>
