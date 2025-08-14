@@ -12,7 +12,7 @@ body {
     color: #333;
     margin: 0;
     line-height: 1.6;
-    scroll-behavior: smooth; /* scroll lin */
+    scroll-behavior: smooth;
 }
 
 /* Header static */
@@ -20,27 +20,33 @@ header {
     background: linear-gradient(135deg, #2a5298,#1e3c72);
     color: white;
     text-align: center;
-    padding: 2rem 1rem; /* dimensiunea headerului */
+    padding: 2rem 1rem;
 }
 
-/* Nav fix */
+/* Nav fix full-width */
 nav {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
     padding: 0.8rem 1rem;
-    position: fixed; /* fixat sus */
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     background: linear-gradient(135deg, #2a5298,#1e3c72);
+    box-sizing: border-box;
+}
+
+/* Link-urile din nav */
+nav .nav-links {
+    display: flex;
+    gap: 1.5rem;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    cursor: pointer;
 }
 
 nav a:hover {
@@ -53,9 +59,6 @@ nav a:hover {
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
-    position: absolute;
-    top: 0.8rem;
-    right: 1rem;
 }
 
 .hamburger div {
@@ -64,6 +67,7 @@ nav a:hover {
     background-color: white;
 }
 
+/* Mobile menu */
 .mobile-menu {
     display: none;
     flex-direction: column;
@@ -89,15 +93,15 @@ nav a:hover {
 
 /* Responsive mobil */
 @media(max-width:768px){
-    nav a { display: none; } /* ascunde link-urile orizontale */
+    nav .nav-links { display: none; }
     .hamburger { display: flex; }
-    main { padding: 140px 0.8rem 2rem 0.8rem; font-size: 0.9rem; } /* compact */
+    main { padding: 140px 0.8rem 2rem 0.8rem; font-size: 0.9rem; }
 }
 
 main {
     max-width: 900px;
     margin: 2rem auto;
-    padding: 80px 1rem 2rem 1rem; /* spațiu pentru nav fix */
+    padding: 80px 1rem 2rem 1rem;
 }
 
 section {
@@ -135,20 +139,23 @@ footer { text-align: center; background: #eee; padding: 1rem; font-size: 0.9rem;
     <h1>Valerica Gligore</h1>
     <p>Psiholog Clinician – Psihoterapie pentru copii, adolescenți și adulți</p>
 
-    <!-- Nav fix -->
     <nav>
-        <a href="#despre-mine">Despre mine</a>
-        <a href="#servicii">Servicii</a>
-        <a href="#obiective">Obiective</a>
-        <a href="#povestea-mea">Povestea mea</a>
-        <a href="#articol">Articol</a>
-        <a href="#program">Program</a>
-        <a href="#contact">Contact</a>
+        <div class="nav-links">
+            <a href="#despre-mine">Despre mine</a>
+            <a href="#servicii">Servicii</a>
+            <a href="#obiective">Obiective</a>
+            <a href="#povestea-mea">Povestea mea</a>
+            <a href="#articol">Articol</a>
+            <a href="#program">Program</a>
+            <a href="#contact">Contact</a>
+        </div>
+
         <div class="hamburger" id="hamburger">
             <div></div>
             <div></div>
             <div></div>
         </div>
+
         <div class="mobile-menu" id="mobileMenu">
             <a href="#despre-mine">Despre mine</a>
             <a href="#servicii">Servicii</a>
